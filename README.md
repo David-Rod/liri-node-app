@@ -1,6 +1,6 @@
 LIRI-NODE-APP created by David Rodriguez
 
-Technologies Used: Node.js, npm packages: request, node-spotify-api, twitter.
+Technologies Used: Node.js, npm packages: request, node-spotify-api, twitter, dotenv.
 
 This application is meant to operate strictly as a node.js application. The purpose was to construct an application that executes commands given by the user. The capability of this application is simple, completing three tasks:
 
