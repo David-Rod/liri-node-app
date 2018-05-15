@@ -8,7 +8,7 @@ This application is meant to operate strictly as a node.js application. The purp
 
     2. When the user enters "node liri.js spotify-this-song <'song name'>", song data will be displayed in the console.
 
-    3. The final piece of functionality will retrieve movie information based on user input. A request is sent to the OMDB API when the user enters "node liri.js movie-this <'movie name'>.
+    3. The final piece of functionality will retrieve movie information based on user input. A request is sent to the OMDB API when the user enters "node liri.js movie-this <'movie name'>".
 
 The most difficult part was retrieving the correct objects to display information outlined in the assignment. Testing in node remains slightly difficult because the results are not visible outside of the console. Initially it was difficult to import the API keys for Twitter, Spotify, and OMDB. Once I was able to utilize the npm packages properly, adding the keys to the page became an easy task. 
 

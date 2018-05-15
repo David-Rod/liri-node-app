@@ -1,17 +1,21 @@
+require("dotenv").config({
+  path: "../.env"
+});
 var Twitter = require("twitter");
 var Spotify = require("node-spotify-api");
 var request = require("request");
-var requiredKeys = require("./keys");
+// var requiredKeys = require("./keys");
 
 var userInput = process.argv[2];
+// var spotifySong = process.argv[4];
 
 var myTweet = function () {
 
   var client = new Twitter({
-    consumer_key: requiredKeys.twitterKeys.consumer_key,
-    consumer_secret: requiredKeys.twitterKeys.consumer_secret,
-    access_token_key: requiredKeys.twitterKeys.access_token_key,
-    access_token_secret: requiredKeys.twitterKeys.access_token_secret
+    consumer_key: process.env.TWITTER_CONSUMER_KEY,
+    consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+    access_token_key: process.env.ACCESS_TOKEN_KEY,
+    access_token_secret: process.env.ACCESS_TOKEN_SECRET
   });
 
   var params = {
@@ -41,8 +45,8 @@ var myTweet = function () {
 var spotifySong = function () {
 
   var spotify = new Spotify({
-    id: requiredKeys.spotifyKeys.id,
-    secret: requiredKeys.spotifyKeys.secret
+    id: process.env.SPOTIFY_ID,
+    secret: process.env.SPOTIFY_SECRET
   });
 
   spotify.search({
@@ -70,7 +74,7 @@ var spotifySong = function () {
 
 var movieThis = function () {
   var movieInfo = process.argv[3].replace(/ +/g, '-').toLowerCase();
-  var apiURL = "http://www.omdbapi.com/?t=" + movieInfo + "&apikey=" + requiredKeys.omdbKey.apiKey;
+  var apiURL = "http://www.omdbapi.com/?t=" + movieInfo + "&apikey=" + process.env.OMDB_KEY;
 
 
   request(apiURL, function (error, response, body) {
